@@ -14,7 +14,7 @@
 
 ## Технологии
 
-- Laravel 11
+- Laravel 12
 - PHP 8.2+
 - SQLite
 - Tailwind CSS
