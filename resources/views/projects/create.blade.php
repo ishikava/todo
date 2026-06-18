@@ -1,58 +1,58 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Новый проект') }}
+        <h2 style="font-weight: 600; font-size: 1.25rem; color: #1f2937;">
+            Новый проект
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6">
+    <div style="padding: 3rem 0;">
+        <div style="max-width: 48rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem;">
+            <div style="background-color: white; overflow: hidden; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); border-radius: 0.5rem;">
+                <div style="padding: 1.5rem;">
                     <form action="{{ route('projects.store') }}" method="POST">
                         @csrf
-                        <div class="space-y-6">
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                             <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
+                                <label for="name" style="display: block; font-size: 0.875rem; font-weight: 500; color: #374151; margin-bottom: 0.25rem;">
                                     Название проекта
                                 </label>
                                 <input
                                     type="text"
                                     id="name"
                                     name="name"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('name') border-red-500 @enderror"
+                                    style="width: 100%; padding-left: 1rem; padding-right: 1rem; padding-top: 0.5rem; padding-bottom: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.5rem;"
                                     value="{{ old('name') }}"
                                     placeholder="Например: Веб-сайт"
                                 >
                                 @error('name')
-                                    <div class="mt-2 text-red-600 text-sm">{{ $message }}</div>
+                                    <div style="margin-top: 0.5rem; color: #dc2626; font-size: 0.875rem;">{{ $message }}</div>
                                 @enderror
                             </div>
 
                             <div>
-                                <label for="description" class="block text-sm font-medium text-gray-700 mb-1">
+                                <label for="description" style="display: block; font-size: 0.875rem; font-weight: 500; color: #374151; margin-bottom: 0.25rem;">
                                     Описание (опционально)
                                 </label>
                                 <textarea
                                     id="description"
                                     name="description"
                                     rows="4"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('description') border-red-500 @enderror"
+                                    style="width: 100%; padding-left: 1rem; padding-right: 1rem; padding-top: 0.5rem; padding-bottom: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.5rem;"
                                     placeholder="Опишите цель проекта..."
                                 >{{ old('description') }}</textarea>
                                 @error('description')
-                                    <div class="mt-2 text-red-600 text-sm">{{ $message }}</div>
+                                    <div style="margin-top: 0.5rem; color: #dc2626; font-size: 0.875rem;">{{ $message }}</div>
                                 @enderror
                             </div>
 
-                            <div class="flex items-center justify-end gap-4 pt-4">
+                            <div style="display: flex; align-items: center; justify-content: flex-end; gap: 1rem; padding-top: 1rem;">
                                 <a
                                     href="{{ route('projects.index') }}"
-                                    class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                                    style="padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 0.5rem; padding-bottom: 0.5rem; border: 1px solid #d1d5db; border-radius: 0.5rem; color: #374151; text-decoration: none; transition: background-color 0.15s ease;"
                                 >
                                     Отмена
                                 </a>
-                                <button type="submit" class="px-6 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                                <button type="submit" style="padding-left: 1.5rem; padding-right: 1.5rem; padding-top: 0.5rem; padding-bottom: 0.5rem; background-color: #2563eb; color: white; border-radius: 0.5rem; border: none; cursor: pointer;">
                                     Создать проект
                                 </button>
                             </div>

@@ -1,3 +1,3 @@
 @props(['value'])
 
-<input {{ $attributes->merge(['class' => 'border-gray-300 focus:border-blue-500 focus:ring-blue-500 rounded-md shadow-sm']) }} value="{{ old($name, $value) }}">
+<input {{ $attributes->merge(['style' => 'border-color: #d1d5db; border-radius: 0.5rem; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);']) }} value="{{ old($name, $value) }}">
