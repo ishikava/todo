@@ -53,7 +53,12 @@ type nul > database/todo.sqlite
 php artisan migrate
 ```
 
-7. Запустите сервер разработки:
+7. Заполните базу данных тестовыми данными:
+```bash
+php artisan db:seed
+```
+
+8. Запустите сервер разработки:
 ```bash
 php artisan serve
 ```
@@ -97,6 +102,16 @@ routes/
 
 ## Схема базы данных
 
+### Users (Пользователи)
+- id
+- name
+- email (уникальный)
+- email_verified_at
+- password
+- remember_token
+- created_at
+- updated_at
+
 ### Projects (Проекты)
 - id
 - name (название)
@@ -112,6 +127,13 @@ routes/
 - completed (статус выполнения: 0/1)
 - created_at
 - updated_at
+
+## Тестовые данные
+
+После выполнения `php artisan db:seed` база данных будет заполнена:
+- 10 пользователей
+- 10 проектов
+- 50 задач (по 5 задач на каждый проект)
 
 ## Разработка
 
